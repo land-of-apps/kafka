@@ -1,0 +1,33 @@
+name: kafka
+
+packages:
+ - path: org.apache.kafka
+   exclude:
+   - org.apache.kafka.streams.integration.StandbyTaskEOSIntegrationTest#shouldSurviveWithOneTaskAsStandby
+   - org.apache.kafka.streams.processor.internals.StreamsPartitionAssignorTest
+   - org.apache.kafka.streams.processor.internals.RepartitionOptimizingTest#shouldSendCorrectRecords_OPTIMIZED
+   - org.apache.kafka.streams.processor.internals.RepartitionWithMergeOptimizingTest#shouldSendCorrectRecords_OPTIMIZED
+   - org.apache.kafka.streams.processor.internals.RepartitionWithMergeOptimizingTest#shouldSendCorrectResults_NO_OPTIMIZATION
+   - org.apache.kafka.streams.integration.StandbyTaskEOSIntegrationTest#shouldWipeOutStandbyStateDirectoryIfCheckpointIsMissing
+   - org.apache.kafka.clients.consumer.CooperativeStickyAssignorTest#testReassignmentWithRandomSubscriptionsAndChanges
+   - org.apache.kafka.clients.consumer.StickyAssignorTest#testReassignmentWithRandomSubscriptionsAndChanges
+   - org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest#testReassignmentWithRandomSubscriptionsAndChanges
+   - org.apache.kafka.clients.consumer.CooperativeStickyAssignorTest#testLargeAssignmentWithMultipleConsumersLeavingAndRandomSubscription
+   - org.apache.kafka.clients.consumer.StickyAssignorTest#testLargeAssignmentWithMultipleConsumersLeavingAndRandomSubscription
+   - org.apache.kafka.clients.consumer.internals.AbstractStickyAssignorTest#testLargeAssignmentWithMultipleConsumersLeavingAndRandomSubscription
+   - org.apache.kafka.common.network.SelectorTest#testLargeMessageSequence
+   - org.apache.kafka.clients.producer.internals.BufferPoolTest
+   - org.apache.kafka.clients.consumer.internals.FetcherTest
+   - org.apache.kafka.common.metrics.MetricsTest
+   - org.apache.kafka.clients.producer.internals.RecordAccumulatorTest
+   - org.apache.kafka.common.record.MemoryRecordsBuilderTest
+   - org.apache.kafka.clients.producer.KafkaProducerTest
+   - org.apache.kafka.clients.producer.testFlushCompleteSendOfInflightBatches
+   - org.apache.kafka.connect.integration.BlockingConnectorTest
+   - org.apache.kafka.streams.kstream.internals.KTableKTableLeftJoinTest
+   - org.apache.kafka.streams.state.internals.ThreadCacheTest
+   - org.apache.kafka.streams.integration.KTableKTableForeignKeyJoinIntegrationTest
+ - path: kafka
+   exclude:
+   - kafka.coordinator.transaction.TransactionCoordinatorConcurrencyTest
+   - kafka.log.LogConcurrencyTest
