@@ -6,4 +6,8 @@ jdk:
 import: land-of-apps/land-of-apps:travis/java-imports.yml
 
 script:
-- travis_wait ./gradlew unitTest -PignoreFailures=true
+- ./gradlew clients:unitTest -PignoreFailures=true
+- ./gradlew connect:unitTest -PignoreFailures=true
+- ./gradlew generator:unitTest -PignoreFailures=true
+- ./gradlew log4j-appender:unitTest -PignoreFailures=true
+- ./gradlew tools:unitTest -PignoreFailures=true
