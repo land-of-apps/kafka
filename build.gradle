@@ -390,6 +390,12 @@ subprojects {
 
     maxHeapSize = defaultMaxHeapSize
     jvmArgs = defaultJvmArgs
+    systemProperty 'appmap.debug', true
+    systemProperty 'appmap.config.file', "$rootDir/appmap.yml"
+    systemProperty 'appmap.output.directory', "$rootDir/tmp/appmaps"
+    def appmapAgent = "-javaagent:appmap.jar"
+    if (!jvmArgs.contains(appmapAgent))
+      jvmArgs += appmapAgent
 
     testLogging {
       events = userTestLoggingEvents ?: testLoggingEvents
