@@ -393,7 +393,8 @@ subprojects {
     systemProperty 'appmap.debug', true
     systemProperty 'appmap.config.file', "$rootDir/appmap.yml"
     systemProperty 'appmap.output.directory', "$rootDir/tmp/appmaps"
-    def appmapAgent = "-javaagent:appmap.jar"
+    def agentLocation = "$rootDir/appmap.jar"
+    def appmapAgent = "-javaagent:".concat(agentLocation)
     if (!jvmArgs.contains(appmapAgent))
       jvmArgs += appmapAgent
 
